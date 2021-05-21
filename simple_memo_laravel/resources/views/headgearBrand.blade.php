@@ -121,6 +121,8 @@
       <div class="item2"><img src="images/nathan-mullet-Ur742-klaa4-unsplash.jpg" alt=""></div>
       <div class="item2"><img src="images/panama-hat-shop.jpg" alt=""></div>
       <div class="item2"><img src="images/red-hat-factory-VpHp4iXPuSE-unsplash.jpg" alt=""></div>
+      <div class="item2"><img src="images/P824650_3L1.jpg" alt=""></div>
+      <div class="item2"><img src="images/photo10.jpg" alt=""></div>
     </div>
 
     <div class="brand1">

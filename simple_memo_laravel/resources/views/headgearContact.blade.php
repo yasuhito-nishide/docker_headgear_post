@@ -27,7 +27,7 @@
             <nav id="mainnav">
                 <div class="panel">
                     <ul>
-                        <li>こんにちは<br>さん</li>
+                        <li>こんにちは<br>{{ $name }}さん</li>
                         <li><a class="topmenu" href="{{ url("/")}}">TOP</a></li>
                         <li><a href="{{ url("/headgearPost")}}">POST/投稿</a></li>
                         {{-- <li><a href="woman.html">WOMAN</a></li> --}}
