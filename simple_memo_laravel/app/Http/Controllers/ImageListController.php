@@ -6,6 +6,7 @@ use App\Models\Headgear;
 use Illuminate\Http\Request;
 use App\Models\UploadImage;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\storage;
 
 class ImageListController extends Controller
 {
@@ -34,9 +35,18 @@ private function getLoginUserName(){
 
 public function delete(Request $request){
 
+    
     $image = Headgear::find($request->edit_id);
-    $image->delete();
-    return redirect()->to('headgearPost.index');
+
+    $path = $image->file_path;
+    
+    session()->put('select_image',$image);
+
+    Storage::delete('public/'.$path);
+    Headgear::find($request->edit_id)->delete();
+    
+
+    return redirect()->to('headgearPost');
 }
 
 }

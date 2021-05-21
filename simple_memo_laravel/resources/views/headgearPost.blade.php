@@ -63,20 +63,25 @@
 	enctype="multipart/form-data"
 >
 	@csrf
-  <input type="hidden" name="edit_id" value="">
   <input class="upText" type="text" name="title" value="ブランド名を入力してください。">
 	<input class="upload" type="file" name="image" accept="image/png, image/jpeg, image/jpg">
 	<input type="submit" value="Upload">
-</form>
+  </form>
+  
+    
   <div class="wrapper grid">
     @foreach($images as $image)
+    <form method="POST">
+      @csrf
+    <input type="hidden" name="edit_id" value="{{$image->id}}"/>
     <div class="item">
       <img src="{{Storage::url($image->file_path)}}" alt="">
       <div class="item2">
-          <button type="submit" class="btn btn-danger" formaction=""><i class="fas fa-trash-alt"></i></button>
+          <button type="submit" class="btn btn-danger" formaction="{{ route('post.delete') }}"><i class="fas fa-trash-alt"></i></button>
         <p>BRAND|| <br>{{ $image->title }}</p>
       </div>
     </div>
+    </form>
     @endforeach
     <div class="item">
       <img src="images/blacknit.jpg" alt="">

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ImageListController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -18,7 +19,7 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', 'App\Http\Controllers\Auth\LoginController@showLoginForm')->name('login.index');
 Route::get('/user', 'App\Http\Controllers\Auth\RegisterController@showRegistrationForm')->name('user.register');
 Route::post('/user/register', 'App\Http\Controllers\Auth\RegisterController@register')->name('user.exec.register');
-Route::get('/headgearPost',function(){return view("headgearPost");})->name('headgearPost.index');
+// Route::get('/headgearPost',function(){return view("headgearPost");})->name('headgearPost.index');
 
 // Route::get('/memo',function(){
 //     return view("memo");
@@ -27,7 +28,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/headgearIndex', function () {return view("headgearIndex");})->name('headgearIndex.index');
     Route::get('/headgearIndex',[App\Http\Controllers\UploadImageController::class,"index"])->name("index_list");
 
-    Route::get('/headgearPost',function(){return view("headgearPost");})->name('headgearPost.index');
+    // Route::get('/headgearPost',function(){return view("headgearPost");})->name('headgearPost.index');
 // 投稿用の設定
     
     // Route::get('/headgearPost',[App\Http\Controllers\UploadImageController::class,"show"])->name("upload_form");
@@ -47,6 +48,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/contactConfirm',[App\Http\Controllers\ContactController::class,"confirm"])->name('confirm');
     Route::post('/contactComplete',[App\Http\Controllers\ContactController::class,"process"])->name('process');
     Route::get('/contactComplete',[App\Http\Controllers\ContactController::class,"complete"])->name('complete');
+
+    Route::post('/headgearPost/delete',[ImageListController::class,'delete'])->name('post.delete');
 });
 // お問い合わせ
 
