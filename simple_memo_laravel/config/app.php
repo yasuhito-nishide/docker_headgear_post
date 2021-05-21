@@ -12,8 +12,8 @@ return [
     | any other location as required by the application or its packages.
     |
     */
-    'title'=> env('APP_TITLE','Memotubu'),
-    'name' => env('APP_NAME', 'Laravel'),
+    'title'=> env('APP_TITLE','headgear'),
+    'name' => env('APP_NAME', 'headgear'),
     'subName' => env('APP_SUBNAME','Memots'),
 
     /*
@@ -81,7 +81,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'ja',
 
     /*
     |--------------------------------------------------------------------------

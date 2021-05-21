@@ -2,14 +2,24 @@
 
 @section('content')
 <div class="d-flex align-items-center justify-content-center h-100">
-    <form method="get" action="{{ route('memo.index') }}">
+    <form method="post" action="{{ url('login') }}">
+        @csrf
         <div class="card rounded login-card-width shadow">
             <div class="card-body">
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul class="mb-0 mt-0">
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <div class="rounded-circle mx-auto  d-flex mt-3 icon-circle">
-                    <img src="{{ asset('images/1604.m00.i105.n002.S.c12.227734471 Web application development process.jpg')  }}" class="w-100 mx-auto p-2" alt="icon"/>
+                    <img src="{{ asset('images/gettyimages-486840330-170667a.jpg')  }}" class="w-100 mx-auto p-2" alt="icon"/>
                 </div>
                 <div class="d-flex justify-content-center">
-                    <div class="mt-3 h3">{{ config('app.name') }}</div>
+                    <div class="mt-3 h4">{{ config('app.name') }}</div>
                     <div class="mt-2 h1">{{ config('app.subName')}}</div>
                 </div>
                 <div class="row mt-3">
@@ -18,13 +28,13 @@
                                 <span class="input-group-prepend">
                                     <span class="input-group-text"><i class="far fa-envelope"></i></span>
                                 </span>
-                            <input type="text" name="user_email" class="form-control" placeholder="メールアドレス" autocomplete="off" />
+                            <input type="text" name="email" class="form-control" placeholder="メールアドレス" value="{{ old('email')}}" autocomplete="off" />
                         </label>
                         <label class="input-group w-100">
                                 <span class="input-group-prepend">
                                     <span class="input-group-text"><i class="fas fa-key"></i></span>
                                 </span>
-                            <input type="password" name="user_password" class="form-control" placeholder="パスワード" autocomplete="off" />
+                            <input type="password" name="password" class="form-control" placeholder="パスワード" autocomplete="off" />
                         </label>
                         <button type="submit" class="form-control btn btn-success">
                             ログイン

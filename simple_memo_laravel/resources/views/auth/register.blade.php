@@ -2,15 +2,27 @@
 
 @section('content')
 <div class="d-flex align-items-center justify-content-center h-100">
-    <form method="get"  action="{{ route('memo.index') }}">
+    <form method="post"  action="{{ route('user.exec.register') }}">
+        @csrf
         <div class="card rounded login-card-width shadow">
             <div class="card-body">
+
+                @if($errors->any())
+                <div class="alert alert-danger">
+                    <ul class="mb-0 mt-0">
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
                 <div class="rounded-circle mx-auto   d-flex mt-3 icon-circle">
-                    <img src="{{ asset('images/1604.m00.i105.n002.S.c12.227734471 Web application development process.jpg')  }}" class="w-75 mx-auto p-2" alt="icon"/>
+                    <img src="{{ asset('images/gettyimages-486840330-170667a.jpg')  }}" class="w-100 mx-auto p-2" alt="icon"/>
                 </div>
                 <div class="d-flex justify-content-center">
-                    <div class="mt-3 h4">{{ config('app.name') }}</div>
-                    <div class="mt-2 h1">{{ config('app.subName')}}</div>
+                    <div class="mt-3 h4"><a href="{{ route('login.index')}}">{{ config('app.name') }}</a></div>
+                    <div class="mt-2 h1"><a href="{{ route('login.index')}}">{{ config('app.subName')}}</a></div>
                 </div>
                 <div class="row mt-3">
                     <div class="offset-2 col-8 offset-2">
