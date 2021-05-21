@@ -24,13 +24,13 @@
         <div class="panel">
           <ul>
             <li>こんにちは<br>{{ $name }}さん</li>
-              <li><a class="topmenu" href="{{ url("/")}}">TOP</a></li>
-              <li><a href="{{ url("/headgearPost")}}">POST/投稿</a></li>
+              <li><a class="topmenu" href="{{ url('/')}}">TOP</a></li>
+              <li><a href="{{ url('/headgearPost')}}">POST/投稿</a></li>
               {{-- <li><a href="woman.html">WOMAN</a></li> --}}
-              <li><a href="{{ url("/headgearBrand")}}">BRAND/紹介</a></li>
-              <li><a href="{{ url("/headgearContact")}}">CONTACT/<br>問い合わせ</a></li>
-              {{-- <li class="register"><a href="{{ route("user.register") }}">アカウントを作成</a></li> --}}
-              <li class="register"><a href="{{ route("headgear.logout") }}">ログアウト</a></li>
+              <li><a href="{{ url('/headgearBrand')}}">BRAND/紹介</a></li>
+              <li><a href="{{ url('/headgearContact')}}">CONTACT/<br>問い合わせ</a></li>
+              {{-- <li class="register"><a href="{{ route('user.register') }}">アカウントを作成</a></li> --}}
+              <li class="register"><a href="{{ route('headgear.logout') }}">ログアウト</a></li>
           </ul>
           <ul id="sns">
             <li><a href="#"><img src="images/camera.png" width="20" heigth="20" alt="instagram"></a></li>
@@ -179,50 +179,44 @@
     </div>
   </div>
   <footer>
-    <div class="container">
-      <div class="footer-cta pt-5 pb-5">
-        <div class="footer-content pt-5 pb-5">
-          <div class="row">
-            <div class="col-xl-4 col-lg-4 mb-50">
-              <div class="footer-widget">
-                <div class="footer-logo">
-                  <a href="HEADGEAR1.html"><img src="images/HEADGEAR.png" class="img-fluid" alt="logo"></a>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
-              <div class="footer-widget">
-                <div class="footer-widget-heading">
-                  <h3>Subscribe</h3>
-                </div>
-                <ul>
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#">about</a></li>
-                  <li><a href="#">services</a></li>
-                  <li><a href="#">portfolio</a></li>
-                  <li><a href="#">Contact</a></li>
-                  <li><a href="#">About us</a></li>
-                  <li><a href="#">Our Services</a></li>
-                  <li><a href="#">Expert Team</a></li>
-                  <li><a href="#">Contact us</a></li>
-                  <li><a href="#">Latest News</a></li>
-                </ul>
-                <div class="subscribe-form">
-                  <form action="#">
-                    <input type="text" placeholder="Email Address">
-                    <button><i class="fab fa-telegram-plane"></i></button>
-                  </form>
-                </div>
-              </div>
-            </div>
+    <div class="footer-cta pt-5 pb-5">
+      <div class="footer-content pt-5 pb-5">
+        <div class="row">
+        </div>
+      </div>
+      <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
+        <div class="footer-widget">
+          <div class="footer-widget-heading">
+            <h3>Subscribe</h3>
+          </div>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">about</a></li>
+            <li><a href="#">services</a></li>
+            <li><a href="#">portfolio</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Our Services</a></li>
+            <li><a href="#">Expert Team</a></li>
+            <li><a href="#">Contact us</a></li>
+            <li><a href="#">Latest News</a></li>
+          </ul>
+          <div class="subscribe-form">
+            <form action="#">
+              <input type="text" placeholder="Email Address">
+              <button><i class="fab fa-telegram-plane"></i></button>
+            </form>
           </div>
         </div>
-        <p class="p-tag">メールマガジン登録⇡</p>
       </div>
-      <div class="copyright-area">
-        <div class="copyright-text">
-          <p>(c)YasuhitoNishide</p>
-        </div>
+    </div>
+    </div>
+    <p class="p-tag2">メールマガジン登録⇡</p>
+
+    <div class="copyright-area">
+      <div class="copyright-text">
+        <p>(c)YasuhitoNishide</p>
+        <p></p>
       </div>
     </div>
   </footer>

@@ -152,8 +152,6 @@
     <div class="footer-cta pt-5 pb-5">
       <div class="footer-content pt-5 pb-5">
         <div class="row">
-
-
         </div>
       </div>
       <div class="col-xl-4 col-lg-4 col-md-6 mb-50">

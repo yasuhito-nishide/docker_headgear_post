@@ -40,12 +40,13 @@ Route::group(['middleware' => ['auth']], function () {
 
 
     Route::get('/headgearContact',function(){return view("headgearContact");})->name('headgearContact.index');
-    Route::get('/headgearContact',[App\Http\Controllers\UploadImageController::class,"index4"]);
+    // Route::get('/headgearContact',[App\Http\Controllers\UploadImageController::class,"index4"]);
 
     Route::get('/headgearContact',[App\Http\Controllers\UploadImageController::class,"index4"])->name('contact.index');
-    Route::post('/contactConfirm',[App\Http\Controllers\ContactController::class,"confirm"])->name('contact.confirm');
-    Route::get('/contactComplete',[App\Http\Controllers\ContactController::class,"send"])->name('contact.thanks');
-    Route::post('/contactComplete',[App\Http\Controllers\ContactController::class,"send"])->name('contact.thanks');
+    Route::get('/headgearContact',[App\Http\Controllers\ContactController::class,"index"])->name('contact.index');
+    Route::post('/contactConfirm',[App\Http\Controllers\ContactController::class,"confirm"])->name('confirm');
+    Route::post('/contactComplete',[App\Http\Controllers\ContactController::class,"process"])->name('process');
+    Route::get('/contactComplete',[App\Http\Controllers\ContactController::class,"complete"])->name('complete');
 });
 // お問い合わせ
 
