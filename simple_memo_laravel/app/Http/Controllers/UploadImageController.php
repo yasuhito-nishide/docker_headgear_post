@@ -26,13 +26,15 @@ class UploadImageController extends Controller
 
         if ($headgear) {
             $path = $headgear->store('uploads', "public");
+            $user_name = Auth::user();
 
             if ($path) {
                 Headgear::create([
                     "file_name" => $headgear->getClientOriginalName(),
                     "file_path" => $path,
                     "title" => $textTitle,
-                    'user_id' => Auth::id()
+                    'user_id' => Auth::id(),
+                    'user_name' => $user_name->name
 
                 ]);
             }
@@ -94,7 +96,9 @@ class UploadImageController extends Controller
     public function select(Request $request)
     {
         $image = Headgear::find($request->id);
+        $imageUser = Headgear::find($request->name);
         session()->put('select_image', $image);
+        session()->put('image_user',$imageUser);
 
         return redirect()->route('headgearPost.index');
     }

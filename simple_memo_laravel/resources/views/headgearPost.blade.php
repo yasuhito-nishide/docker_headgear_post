@@ -44,7 +44,7 @@
   </div>
   <!--//sidebar-->
   <h2 id="head-tag">POST/投稿</h2>
-  <p class="message1">お気に入りの帽子の投稿ページです。 <br>帽子の写真を投稿してください。</p>
+  <p class="message1">お気に入りの帽子の投稿ページです。 <br>帽子の写真を投稿してください。<br><bold>削除</bold>する場合ご自身で投稿された投稿のみ削除可能です。</p>
 
   @if (count($errors) > 0)
 <div class="alert alert-danger">
@@ -73,11 +73,16 @@
     @foreach($images as $image)
     <form method="POST">
       @csrf
+      <input type="hidden" name="post_id" value="{{$image->user_id}}">
     <input type="hidden" name="edit_id" value="{{$image->id}}"/>
     <div class="item">
       <img src="{{Storage::url($image->file_path)}}" alt="">
       <div class="item2">
           <button type="submit" class="btn btn-danger" formaction="{{ route('post.delete') }}"><i class="fas fa-trash-alt"></i></button>
+          <p>投稿ユーザー||<br>{{ $image->user_name }}さん</p>
+          @if ($errors)
+            <p class='alert alert-danger'>{{ $errors->first('post_id') }}</p>
+            @endif
         <p>BRAND|| <br>{{ $image->title }}</p>
       </div>
     </div>

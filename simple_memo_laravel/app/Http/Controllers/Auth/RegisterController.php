@@ -56,6 +56,6 @@ class RegisterController extends Controller
             'password' => Hash::make($request->password),
         ]);
         $this->guard()->login($user);
-        return redirect()->route('headgearIndex.index');
+        return redirect()->route('headgearIndex');
     }
 }
